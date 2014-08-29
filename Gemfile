@@ -16,6 +16,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'shoulda-matchers', require: false
 end
 
 group :development do
@@ -23,7 +24,9 @@ group :development do
   gem 'guard'
   gem 'guard-livereload'
   gem 'guard-rails'
+  gem 'guard-rspec'
   gem 'rack-livereload'
+  gem 'spring-commands-rspec'
 end
 
 # gem 'bcrypt', '~> 3.1.7'
