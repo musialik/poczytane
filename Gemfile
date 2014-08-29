@@ -20,6 +20,10 @@ end
 
 group :development do
   gem 'spring'
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'guard-rails'
+  gem 'rack-livereload'
 end
 
 # gem 'bcrypt', '~> 3.1.7'
