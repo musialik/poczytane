@@ -14,6 +14,7 @@
   .book-description {
     background-color: white;
     padding: 10px;
+    position: relative;
     // border-radius: 5px;
 
     img {
@@ -39,6 +40,9 @@
 
   .book-authors {
     color: #666;
+  }
+
+  .book-state {
   }
 
   #infscr-loading {

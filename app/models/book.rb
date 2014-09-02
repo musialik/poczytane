@@ -1,6 +1,7 @@
 class Book < ActiveRecord::Base
-  STATES = [:read, :to_read, :not_interested]
+  STATES = [nil, :read, :to_read, :not_interested]
   validates :title, :authors, :img_url, presence: true
+  validates :state, inclusion: STATES
   serialize :authors, Array
 
   def small_img_url
@@ -9,5 +10,17 @@ class Book < ActiveRecord::Base
 
   def list_authors
     authors.join(', ')
+  end
+
+  def mark_as_read
+    update_attribute(:state, :read)
+  end
+
+  def mark_as_to_read
+    update_attribute(:state, :to_read)
+  end
+
+  def mark_as_not_interested
+    update_attribute(:state, :not_interested)
   end
 end
