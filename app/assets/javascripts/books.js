@@ -2,16 +2,14 @@ $(document).on("ready page:change", function() {
   var $container = $('#books-container');
 
   $container.imagesLoaded(function(){
-    $container.masonry({
-      itemSelector: '.book',
-    });
-    triggerScrollIfNoScrollbar($container);
+    initMasonry();
+    triggerScrollIfNoScrollbar();
   });
 
   $container.infinitescroll({
       loading: {
         // finishedMsg: "<em>Congratulations, you've reached the end of the internet.</em>",
-        // msgText: "<em>Loading the next set of posts...</em>",
+        msgText: "Loading more books...",
         speed: 'fast'
       },
       navSelector  : ".pagination",
@@ -24,19 +22,29 @@ $(document).on("ready page:change", function() {
       var $newElems = $(newElements).css({ opacity: 0 });
       $newElems.imagesLoaded(function(){
         $newElems.animate({ opacity: 1 });
-        $container.masonry('appended', $newElems, true);
-        triggerScrollIfNoScrollbar($container);
+        resetMasonry($newElems);
+        triggerScrollIfNoScrollbar();
       });
     }
   );
+
+  function initMasonry() {
+    $container.masonry({
+      itemSelector: '.book',
+    });
+  }
+
+  function resetMasonry(newElems) {
+    $container.masonry('appended', newElems, true);
+  }
 
   function isScrollbar() {
     return $("body").height() > $(window).height();
   }
 
-  function triggerScrollIfNoScrollbar(container) {
+  function triggerScrollIfNoScrollbar() {
     if (!isScrollbar()) {
-      container.infinitescroll('scroll');
+      $container.infinitescroll('scroll');
     }
   }
 });

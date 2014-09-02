@@ -1,4 +1,6 @@
-<div class="book col-xs-6 col-sm-4 col-md-3 col-lg-2">
-  <%= image_tag book.small_img_url %>
-  <p><%= book.title %></p>
+<div class="book col-xs-6 col-sm-4 col-md-3">
+  <div class="book-description">
+    <%= image_tag book.small_img_url %>
+    <h1 class="book-title"><%= book.title %></h1>  
+  </div>
 </div>
