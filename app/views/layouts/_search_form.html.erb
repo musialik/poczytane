@@ -1,0 +1,9 @@
+<%= search_form_for @q, html: { class: 'navbar-form navbar-right' } do |f| %>
+  <div class="form-group">
+    <%= f.search_field :title_cont, class: "form-control", 
+                                    placeholder: "Search by title" %>
+    <%= f.search_field :authors_cont, class: "form-control", 
+                                    placeholder: "Search by author" %>
+    <%= f.submit "Submit", class: "btn btn-default" %>
+  </div>
+<% end %>

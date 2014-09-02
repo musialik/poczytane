@@ -1,6 +1,8 @@
 <div class="book col-xs-6 col-sm-4 col-md-3">
   <div class="book-description">
     <%= image_tag book.small_img_url %>
-    <h1 class="book-title"><%= book.title %></h1>  
+    <h1 class="book-title"><%= book.title %></h1>
+    <div class="book-by">by</div>
+    <div class="book-authors"><%= book.list_authors %></div>
   </div>
 </div>

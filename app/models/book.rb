@@ -6,4 +6,8 @@ class Book < ActiveRecord::Base
   def small_img_url
     img_url.gsub(/zoom=\d+/, 'zoom=2')
   end
+
+  def list_authors
+    authors.join(', ')
+  end
 end
