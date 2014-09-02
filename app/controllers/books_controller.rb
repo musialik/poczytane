@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.limit(8)
+    @books = Book.page params[:page]
   end
 end
