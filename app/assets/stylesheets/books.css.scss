@@ -43,6 +43,18 @@
   }
 
   .book-state {
+    font-size: 60%;
+    vertical-align: middle;
+  }
+
+  .label-read {
+    @extend .label-success;
+  }
+  .label-to_read {
+    @extend .label-info;
+  }
+  .label-not_interested {
+    @extend .label-default;
   }
 
   #infscr-loading {

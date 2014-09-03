@@ -44,4 +44,8 @@ class Book < ActiveRecord::Base
   def other?
     state.nil?
   end
+
+  def pretty_state
+    state.gsub('_', ' ')
+  end
 end

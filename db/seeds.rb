@@ -237,3 +237,8 @@ Book.create!([
     {:title=>"The Country Cooking of Ireland", :authors=>["Colman Andrews"], :img_url=>"http://bks2.books.google.pl/books?id=nKBdBblqiX0C&printsec=frontcover&img=1&zoom=4&edge=curl&source=gbs_api"},
     {:title=>"The Tante Marie's Cooking School Cookbook", :authors=>["Mary S. Risley"], :img_url=>"http://bks4.books.google.pl/books?id=dy35FUDcl2oC&printsec=frontcover&img=1&zoom=4&edge=curl&source=gbs_api"}
   ])
+
+Book.all.each do |book|
+  book.state = Book::STATES.sample
+  book.save
+end

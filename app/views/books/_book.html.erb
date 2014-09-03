@@ -4,8 +4,8 @@
     <h1 class="book-title">
       <%= book.title %>
       <% if book.state.present? %>
-        <span class="label label-info book-state">
-          <%= book.state %>
+        <span class="label label-<%= book.state %> book-state">
+          <%= book.pretty_state %>
         </span>
       <% end %>
     </h1>
