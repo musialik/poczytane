@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ApplicationHelper, :type => :helper do
 
   describe "#navbar_link_to" do
-    let(:request) { double('request', fullpath: '/current-path') }
+    let(:request) { double('request', fullpath: '/current-path/?some=args&etc') }
     before(:each) { allow(helper).to receive(:request).and_return request }
 
     it "generates an anchor tag inside a li tag" do
@@ -14,7 +14,7 @@ RSpec.describe ApplicationHelper, :type => :helper do
 
     context "when current path is the same as the path argument" do
       it "adds class active to the li tag" do
-        result = navbar_link_to "Home", request.fullpath
+        result = navbar_link_to "Home", '/current-path/'
 
         expect(result).to have_css 'li.active a'
       end
