@@ -12,9 +12,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <%= navbar_link_to 'All books', books_path %>
+        <%= navbar_link_to 'Read', read_books_path %>
+        <%= navbar_link_to 'To read', to_read_books_path %>
+        <%= navbar_link_to 'Not interested', not_interested_books_path %>
+        <%= navbar_link_to 'Other', other_books_path %>
       </ul>
 
       <%= render 'layouts/search_form' %>
-    </div><!-- /.navbar-collapse -->
+    </div>
   </div>
 </nav>

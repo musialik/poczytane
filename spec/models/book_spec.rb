@@ -15,7 +15,7 @@ RSpec.describe Book, :type => :model do
     end
   end
 
-  describe "" do
+  describe "methods for changing state" do
     before do
       @book = Book.create(
         title: 'A title', 
@@ -28,7 +28,7 @@ RSpec.describe Book, :type => :model do
       it "changes state to read" do
         @book.mark_as_read
 
-        expect(@book.state).to eq :read
+        expect(@book.state).to eq 'read'
       end
     end
 
@@ -36,7 +36,7 @@ RSpec.describe Book, :type => :model do
       it "changes state to to_read" do
         @book.mark_as_to_read
 
-        expect(@book.state).to eq :to_read
+        expect(@book.state).to eq 'to_read'
       end
     end
 
@@ -44,7 +44,7 @@ RSpec.describe Book, :type => :model do
       it "changes state to not_interested" do
         @book.mark_as_not_interested
 
-        expect(@book.state).to eq :not_interested
+        expect(@book.state).to eq 'not_interested'
       end
     end
   end

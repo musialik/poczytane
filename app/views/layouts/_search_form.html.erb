@@ -1,4 +1,6 @@
-<%= search_form_for @q, html: { class: 'navbar-form navbar-right' } do |f| %>
+<%= search_form_for @q,
+                    url: request.fullpath,
+                    html: { class: 'navbar-form navbar-right' } do |f| %>
   <div class="form-group">
     <%= f.search_field :title_cont, class: "form-control", 
                                     placeholder: "Search by title" %>

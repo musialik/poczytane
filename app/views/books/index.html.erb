@@ -1,6 +1,12 @@
 <div class="container">
   <div id="books-container" class="row transitions-enabled infinite-scroll clearfix">
-    <%= render @books %>
+    <% if @books.any? %>
+      <%= render @books %>
+    <% else %>
+      <div class="col-xs-12">
+        <h1>Nothing Found</h1>
+      </div>
+    <% end %>
   </div>
   <%= paginate @books %>
 </div>
