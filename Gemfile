@@ -35,6 +35,12 @@ group :development do
   gem 'spring-commands-rspec'
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+  gem 'passenger'
+end
+
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 # gem 'capistrano-rails', group: :development
