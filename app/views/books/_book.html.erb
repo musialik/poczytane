@@ -1,4 +1,4 @@
-<div class="book col-xs-6 col-sm-4 col-md-3">
+<div class="book book-<%= book.id %> col-xs-6 col-sm-4 col-md-3">
   <div class="book-description">
     <%= link_to book.img_url, data: {
         lightbox: book.id,
@@ -8,11 +8,7 @@
     <% end %>
     <h1 class="book-title">
       <%= book.title %>
-      <% if book.state.present? %>
-        <span class="label label-<%= book.state %> book-state">
-          <%= book.pretty_state %>
-        </span>
-      <% end %>
+      <%= render 'state_dropdown', book: book %>
     </h1>
     <div class="book-by">by</div>
     <div class="book-authors"><%= book.list_authors %></div>

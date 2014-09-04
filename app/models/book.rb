@@ -46,6 +46,6 @@ class Book < ActiveRecord::Base
   end
 
   def pretty_state
-    state.gsub('_', ' ')
+    state.present? ? state.gsub('_', ' ') : 'no state'
   end
 end

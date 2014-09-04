@@ -15,7 +15,7 @@
     background-color: white;
     padding: 10px;
     position: relative;
-    // border-radius: 5px;
+    border-radius: 5px;
 
     img {
       width: 100%;
@@ -43,18 +43,19 @@
   }
 
   .book-state {
-    font-size: 60%;
-    vertical-align: middle;
+    position: absolute;
+    top: 7px;
+    left: 7px;
   }
 
-  .label-read {
-    @extend .label-success;
+  .btn-read {
+    @extend .btn-success;
   }
-  .label-to_read {
-    @extend .label-info;
+  .btn-to_read {
+    @extend .btn-info;
   }
-  .label-not_interested {
-    @extend .label-default;
+  .btn-not_interested {
+    @extend .btn-warning;
   }
 
   #infscr-loading {

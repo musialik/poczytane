@@ -1,0 +1,7 @@
+var $book = $('.book-<%= @book.id %>');
+$book.find('.book-state .dropdown-toggle')
+  .removeAttr('class')
+  .attr('class', 'btn btn-<%= @book.state or 'default' %> dropdown-toggle')
+
+$book.find('.btn-group').removeClass('open');
+$book.find('.dropdown-toggle').html('<%= @book.pretty_state %> <span class="caret"></span>');

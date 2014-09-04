@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'books#index', as: :books
-  resources :books, only: [] do
+  resources :books, only: [:index, :update] do
     collection do
       get :read
       get :to_read

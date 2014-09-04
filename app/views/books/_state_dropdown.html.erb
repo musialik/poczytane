@@ -1,0 +1,40 @@
+<div class="btn-group book-state">
+  <button class="btn btn-<%= book.state or 'default' %> dropdown-toggle"
+    data-toggle="dropdown">
+    <%= book.pretty_state %>
+    <span class="caret"></span>
+  </button>
+
+  <ul class="dropdown-menu" role="menu">
+    <% unless book.read? %>
+      <li>
+        <%= link_to "mark as read", book_path(book, state: 'read'),
+          method: :put, remote: true %>
+      </li>
+    <% end %>
+    <% unless book.to_read? %>
+      <li>
+        <%= link_to "mark as to read", book_path(book, state: 'to_read'),
+          method: :put, remote: true %>
+      </li>
+    <% end %>
+    <% unless book.not_interested? %>
+      <li>
+        <%= link_to "mark as not interested",
+          book_path(book, state: 'not_interested'),
+          method: :put, remote: true %>
+      </li>
+    <% end %>
+    <% unless book.other? %>
+      <li>
+        <%= link_to "reset state", book_path(book, state: nil),
+          method: :put, remote: true %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<% if book.state.present? %>
+  <span class="label label-<%= book.state %>">
+    <%= book.pretty_state %>
+  </span>
+<% end %>

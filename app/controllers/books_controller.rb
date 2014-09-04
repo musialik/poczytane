@@ -24,6 +24,17 @@ class BooksController < ApplicationController
     render 'index'
   end
 
+  def update
+    @book = Book.find(params[:id])
+    @book.state = params[:state]
+    @book.save
+
+    respond_to do |format|
+      format.html { redirect_to books_path, notice: "#{@book.title} updated" }
+      format.js
+    end
+  end
+
   private
 
   def search_books
