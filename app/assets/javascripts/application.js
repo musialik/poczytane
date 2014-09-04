@@ -3,6 +3,7 @@
 //= require masonry.pkgd.min
 //= require imagesloaded.pkgd.min
 //= require jquery.infinitescroll.min
+//= require lightbox.min
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .

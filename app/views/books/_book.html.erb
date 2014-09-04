@@ -1,6 +1,11 @@
 <div class="book col-xs-6 col-sm-4 col-md-3">
   <div class="book-description">
-    <%= image_tag book.small_img_url %>
+    <%= link_to book.img_url, data: {
+        lightbox: book.id,
+        title: "#{book.title} by #{book.list_authors}"
+      } do %>
+      <%= image_tag book.small_img_url %>
+    <% end %>
     <h1 class="book-title">
       <%= book.title %>
       <% if book.state.present? %>
